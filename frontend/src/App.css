@@ -1,6 +1,5 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
@@ -39,4 +38,104 @@
 
 .read-the-docs {
   color: #888;
+}
+/* General Page Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+/* Container Styling */
+.loan-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 92vw;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.loan-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title */
+.loan-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Group */
+.loan-input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.loan-input-group label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.loan-input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.loan-input-group input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Submit Button */
+.loan-button {
+  background: linear-gradient(90deg, #4a90e2, #007aff);
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.loan-button:hover {
+  background: linear-gradient(90deg, #007aff, #0056b3);
+  transform: scale(1.05);
+}
+
+/* Prediction Result */
+.loan-result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007aff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

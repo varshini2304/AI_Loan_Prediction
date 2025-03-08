@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css"; // Import external CSS file
 
 export default function LoanApprovalForm() {
     const featureNames = [
@@ -48,25 +49,24 @@ export default function LoanApprovalForm() {
     };
 
     return (
-        <div className="p-8 max-w-xl mx-auto bg-gradient-to-br from-blue-50 to-white shadow-xl rounded-xl border border-gray-300">
-            <h2 className="text-3xl font-extrabold mb-6 text-center text-blue-700">Loan Approval Prediction</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="loan-container">
+            <h2 className="loan-title">Loan Approval Prediction</h2>
+            <form onSubmit={handleSubmit} className="loan-form">
                 {featureNames.map((name, index) => (
-                    <div key={index} className="flex flex-col">
-                        <label className="font-semibold text-gray-800 mb-1">{name}</label>
+                    <div key={index} className="loan-input-group">
+                        <label>{name}</label>
                         <input
                             type="number"
                             value={features[index]}
                             onChange={(e) => handleChange(index, e.target.value)}
                             placeholder={`Enter ${name}`}
-                            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-gray-800"
                             required
                         />
                     </div>
                 ))}
-                <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">Predict</button>
+                <button type="submit" className="loan-button">Predict</button>
             </form>
-            {result && <p className="mt-6 text-lg font-bold text-center text-blue-800">Prediction: {result}</p>}
+            {result && <p className="loan-result">Prediction: {result}</p>}
         </div>
     );
 }
