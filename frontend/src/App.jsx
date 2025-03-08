@@ -48,25 +48,25 @@ export default function LoanApprovalForm() {
     };
 
     return (
-        <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg border border-gray-200">
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Loan Approval Prediction</h2>
+        <div className="p-8 max-w-xl mx-auto bg-gradient-to-br from-blue-50 to-white shadow-xl rounded-xl border border-gray-300">
+            <h2 className="text-3xl font-extrabold mb-6 text-center text-blue-700">Loan Approval Prediction</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 {featureNames.map((name, index) => (
                     <div key={index} className="flex flex-col">
-                        <label className="font-semibold text-gray-700 mb-1">{name}</label>
+                        <label className="font-semibold text-gray-800 mb-1">{name}</label>
                         <input
                             type="number"
                             value={features[index]}
                             onChange={(e) => handleChange(index, e.target.value)}
                             placeholder={`Enter ${name}`}
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100 text-gray-800"
                             required
                         />
                     </div>
                 ))}
-                <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition">Predict</button>
+                <button type="submit" className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">Predict</button>
             </form>
-            {result && <p className="mt-4 text-lg font-semibold text-center text-gray-900">Prediction: {result}</p>}
+            {result && <p className="mt-6 text-lg font-bold text-center text-blue-800">Prediction: {result}</p>}
         </div>
     );
 }

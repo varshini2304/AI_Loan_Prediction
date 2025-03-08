@@ -23,7 +23,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Define input schema
 class LoanInput(BaseModel):
     features: list[float]  # Expecting a list of numerical values
 
